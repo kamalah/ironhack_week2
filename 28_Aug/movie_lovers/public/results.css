@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+img.poster {
+  height:300px;
+  width:198px;
+  border-width: 1px;
+  padding: 2px;
+  border-style: solid;
+  border-color: black;
+
+}
+
+#container {
+  width: 620px;
+  margin: 0 auto;
+  clear:both;
+  padding:5px;	 
+  border: 5px;
+}

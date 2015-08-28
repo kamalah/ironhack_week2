@@ -1,0 +1,3 @@
+get gas,0,true
+buy groceries,1,true
+go to the gym,1,true

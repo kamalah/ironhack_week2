@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do list</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<h2> <%= @username %>'s To Do List </h2>
+	<% @task_list.each do |task| %>
+		<% if task.status %>
+			<li> <%= task.content %>
+		<form action="/mark_done" method="post"> 
+		<input type="hidden" value="<%= task.id %>" name="done"> 
+		<input type="submit" value="MARK DONE">
+		</form>
+		
+		<form action="/delete" method="post"> 
+		<input type="hidden" value="<%= task.id %>" name="delete"> 
+		<input type="submit" value="X">
+		</form> <br> <br>
+		<% end %> 
+	<%end%>
+	<br> <br>
+	<form action ="/add_task" method = "post">
+		<input type="text" name="new_task">
+		<input type="submit" value="ADD TASK">
+	</form>
+	<br> <br>
+	<a href ="/done_list">Show Completed Items</a><br>
+	<br>
+	
+	<form action="/save_list" method="post">
+	<input type="submit" value="SAVE LIST"></form> <br>
+
+	<form action="/load_file" method="POST" enctype="multipart/form-data">
+       <p> 
+       		<label for = "file"> File: </label>
+       		<input type = "file" name = "file">
+       	</p>
+   <p>
+    <input name = "commit" type = "submit" value= "Upload"/>
+    </p>
+    </form>
+	
+	<form action="/log_out" method="get">
+	 <input type="submit" value="LOG OUT"></form> 
+
+</body>
+</html>

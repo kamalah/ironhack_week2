@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In</title>
+</head>
+<body>
+
+	<% if @invalid %>
+	 <font color="red">	Incorrect password or username. </font>
+	<% end %>
+<form action="/check" method="POST">
+       Please enter the Username: <input name="user" type="text" /> <br>
+       <br>
+       Please enter the Password: <input name="password" type="password" /> <br>
+	<input type="submit" value="LOG ON">
+</form>
+
+</body>
+</html>

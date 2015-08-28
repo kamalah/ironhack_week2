@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css"/>
+		<meta charset="utf-8"/>
+	<title>Random Phrase Maker</title>
+</head>
+<body>
+	<div id ="container">
+	<h1> "<%= @phrase %>" is the random phrase </h1>
+	<a href="/" class="fauxButton">Reload</a>
+	<br>
+	<br>
+	Please enter a new phrase: <form action="/add_phrase" method="POST">
+       <input name="phrase" type="text" />
+        </form>
+	</div>
+	<br>
+	
+	<% if @show_hide %>
+		<a href="/show_hide" class="fauxButton">Hide</a> <br> <br>
+		
+		<form action="/remove_phrase" method="POST">
+		
+		<% 0.upto((@random_phrases.number) -1) do |i| %>
+			 <%= @random_phrases.get_phrase(i) %> 
+		 <input name="checkbox[]" type="radio" value="<%= i %>" id="<%= i %>"> <br>
+			<% end %>
+		<input type="submit" value="Delete">
+		 </form>
+	<% else %>
+		<a href="/show_hide" class="fauxButton">Show</a>
+	<%end%>
+
+
+</body>
+</html>

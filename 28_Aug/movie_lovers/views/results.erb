@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+	<link rel="stylesheet" type="text/css" href="results.css">
+</head>
+<body>
+	<h1> Here are some movies that match your search term: "<%=@search %>" </h1>
+
+	<div id = "container">
+			<h2> <%= @question[1] %> <%= @question[0] %> </h1>
+			<% @movie_posters.each_with_index do |movie,i| %> 
+			<% if i == @question[0] %>
+				<img src="<%= movie.poster %>" class="poster" onClick="alert('yay')" />
+			<% else %>
+				<img src="<%= movie.poster %>" class="poster" onClick="alert('boo')"/>
+			<%end %>
+		<% end %>
+	</div>
+</body>
+</html>

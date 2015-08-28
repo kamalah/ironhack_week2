@@ -1,0 +1,6 @@
+get gas,0,true
+go to the gym,1,false
+aksdjfhasdf,2,false
+asfasfd,3,true
+get groceries,4,true
+buy new shoes,5,true

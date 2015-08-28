@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css"/>
+		<meta charset="utf-8"/>
+	<title>Calculator</title>
+</head>
+<body>
+	<div id ="container">
+	<h1> Calculator </h1>
+	<form action="/result" method="POST">
+       <% if @rcnum.nil? %>
+       		Please enter the first number: <input name="num1" type="number" /> <br>
+       		<br>
+       	<%else %>
+			Using stored value <%= @rcnum %> <br>
+       	<%end%>
+       Please enter the second number: <input name="num2" type="number" /> <br> <br>
+       	<input type="submit" value="+" name="operation" =>
+		<input type="submit" value="-" name="operation">
+		<input type="submit" value="*" name="operation">
+		<input type="submit" value="/" name="operation"><br><br>
+		<input type="submit" value="RC" name="operation">
+		<input type="submit" value="CL" name="operation">
+		</form>
+
+
+	</div>
+	<br>
+				<% if !@result_string.nil? %>
+				<h2> <%= @result_string %></h2>
+					<form action="/store" method="POST">
+						<input type= "hidden" name ="result" value= "<%= @result %>"> 
+						<input type="submit" value="store">
+					</form>
+				<%end %>
+	
+
+</body>
+</html>
