@@ -10,10 +10,11 @@ RSpec.describe MovieSearch do
 		@movie[5] = instance_double("Movie", :poster=>nil)
 	end
 
-	it "checks that there are 9 results of the search" do
+	it "makes sure no movies without posters are included in list" do
 		new_search =MovieSearch.new
 		new_search.movie_array = @movie
 		new_search.get_movies_with_posters
+		poster_lis
 		expect(new_search.movies_with_posters.include?(nil)).to be_falsey
 	end
 

@@ -1,16 +1,6 @@
-h1 {
-  text-align: center;
-}
+body { text-align: center; }
 
-h2 {
-  text-align: center;
-}
-
-h3 {
-  text-align: center;
-}
-
-img.poster {
+.poster {
   height:300px;
   width:198px;
   border-width: 1px;
@@ -19,6 +9,16 @@ img.poster {
   border-color: black;
 
 }
+
+form {
+display:inline;
+  
+}
+
+input.game {
+    width: 300px;  height:20px;
+    text-align: center;
+  }
 
 #container {
   width: 620px;

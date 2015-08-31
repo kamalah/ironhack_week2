@@ -11,18 +11,14 @@
 		<h1> Here are some movies that match your search term: "<%=@search %>" </h1>
 	<% end %>
 	
-		<%@test.each do |question| %>
-			<div id = "container">
-			<h2> <%= question[1] %> <%= question[0] %> </h1>
-			<% @movie_posters.each_with_index do |movie,i| %> 
-			<% if i == question[0] %>
-				<img src="<%= movie.poster %>" class="poster" onClick="alert('yay')" />
-			<% else %>
-				<img src="<%= movie.poster %>" class="poster" onClick="alert('boo')"/>
-			<%end %>
+	<div id = "container">
+		<form action="/test" method="get">
+	   	<input type="submit" value="PLAY GAME" class="game"> </form> <br> <br>
+		<% @movie_posters.each_with_index do |movie,i| %> 
+			<img src="<%= movie.poster %>" class="poster">
 		<% end %>
-			</div>
-		<% end %>
+
 	
+	</div>
 </body>
 </html>
